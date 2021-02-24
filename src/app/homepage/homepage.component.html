@@ -1,0 +1,27 @@
+<div id="app" class="container">
+    <h1>Connect Four</h1>
+
+    <div class="connect4-status">
+
+        <button class="connect4-restart">Restart</button>
+
+        <div class="connect4-label connect4-label--failure">
+            Game over!
+        </div>
+
+        <div style="float: right !important;">
+            <label for="player1">Player 1:</label>
+            <input id="player1" [(colorPicker)]="color1" [style.background]="color1"/>
+            
+        </div>
+
+    </div>
+
+    <div class="connect4-board connect4-board--active">
+        <div *ngFor="let item of counter(columns)" class="connect4-column">
+            <button *ngFor="let row of counter(rows)" class="connect4-cell"
+						[ngStyle]="{'background-color': color1}" ></button>
+        </div>
+    </div>
+</div>
+
