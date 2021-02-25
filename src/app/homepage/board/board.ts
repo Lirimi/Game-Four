@@ -1,4 +1,5 @@
 import { OnInit, Injectable } from "@angular/core";
+import { Conditions } from "./conditions";
 
 @Injectable()
 export class Board implements OnInit{
@@ -14,7 +15,7 @@ export class Board implements OnInit{
       ];
     inserts: number = 0;
     nextPlayer: number = -1;
-    constructor(){
+    constructor(private conditions: Conditions){
     }
 
 
@@ -37,7 +38,25 @@ export class Board implements OnInit{
         this.inserts += 1;
 
         this.nextPlayer = this.players[this.inserts % 2];
+
+        if(this.conditions.checkRows(this.board, player)){
+            console.log("Fitoj")
+        }
+        else{
+            console.log("Nuk fitoj")
+        }
         
+    }
+
+
+
+    /* This functions will be used to get width and height of board dynamically */
+    getHeightBoard(): number {
+        return this.board.length;
+    }
+    
+    getWidthBoard(): number {
+        return this.board[0].length;
     }
 
 
