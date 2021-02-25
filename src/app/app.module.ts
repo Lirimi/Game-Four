@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { Board } from './homepage/board/board';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
     AppRoutingModule,
     ColorPickerModule
   ],
-  providers: [],
+  providers: [Board],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

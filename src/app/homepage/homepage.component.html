@@ -18,9 +18,11 @@
     </div>
 
     <div class="connect4-board connect4-board--active">
-        <div *ngFor="let item of counter(columns)" class="connect4-column">
-            <button *ngFor="let row of counter(rows)" class="connect4-cell"
-						[ngStyle]="{'background-color': color1}" ></button>
+        <div *ngFor="let item of board.board; let i = index" class="connect4-column">
+            <button *ngFor="let row of item" class="connect4-cell"
+						[ngStyle]="{'background-color': row == 0 ? 'default' : (row == -1 ? color1 : 'blue')}"
+                         
+                        (click)="clickCell(i)">{{row}}</button>
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { empty } from 'rxjs';
+import { Board } from './board/board';
 import config from './config';
+
 
 @Component({
   selector: 'app-homepage',
@@ -15,7 +16,7 @@ export class HomepageComponent implements OnInit {
   color1: string = '';
   color2: string = '';
 
-  constructor() { }
+  constructor(public board: Board) { }
 
   ngOnInit(): void {
     this.columns = config.axes.columns;
@@ -24,8 +25,10 @@ export class HomepageComponent implements OnInit {
     this.color2 = config.colors.blue;
   }
 
-  counter(i:number){
-    return new Array(i);
+
+  clickCell(i: number){
+    console.log(i);
+    this.board.playAndNext(i, this.board.nextPlayer);
   }
 
 }
