@@ -19,7 +19,7 @@
 
     <div class="connect4-board connect4-board--active">
         <div *ngFor="let item of board.board; let i = index" class="connect4-column">
-            <button *ngFor="let row of item" class="connect4-cell"
+            <button [disabled]="board.active == false" *ngFor="let row of item" class="connect4-cell"
 						[ngStyle]="{'background-color': row == 0 ? 'default' : (row == -1 ? color1 : 'blue')}"
                          
                         (click)="clickCell(i)">{{row}}</button>
