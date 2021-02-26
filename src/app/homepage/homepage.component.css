@@ -9,7 +9,13 @@ body {
   font-family: Arial;
   color: #333;
 }
-
+h1 {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
 .containerr {
   width: 700px;
   margin: 10px auto;
@@ -94,30 +100,6 @@ body {
   height: 30px;
   margin: 0;
   width: 30px;
-}
-
-.connect4-status {
-  margin: 20px 0;
-}
-
-.connect4-status-nextturn {
-  height: 30px;
-}
-
-.connect4-restart {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.connect4-label {
-  font-size: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 10px;
-}
-
-.connect4-label.connect4-label--failure {
-  color: #801515;
 }
 
 /* -- Responsive  -- */

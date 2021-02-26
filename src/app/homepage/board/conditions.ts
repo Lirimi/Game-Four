@@ -90,13 +90,11 @@ export class Conditions implements OnInit{
         let found;
         let foundPiece;
         let col;
-        let matchReq = 4;
+        let matchReq = 4; // can be made dynamic later on
         let numRows = cBoard[0].length;
         let numCols = cBoard.length;
-        // Here, we take successive diagonals, defined by the location of their
-        // "base", meaning the column where they meet the ground.
-        // The initial baseCol is a negative number, representing that the diagonal
-        // starts off the board. These diagonals intersect the board, nonetheless.
+        
+
         for (
             let baseCol = matchReq - numRows;
             baseCol < numCols - (matchReq - 1);
@@ -105,14 +103,12 @@ export class Conditions implements OnInit{
 
             found = 0;
             foundPiece = 0;
-            col = baseCol - 1; // Subtracting 1 to compensate for incrementing col at
-                            // the beginning of the loop
-
-            // Here we work our way *UP* the current diagonal
+            col = baseCol - 1; 
+          
             for (let row = 0; row < numRows; row++) {
             col++;
 
-            // Ensure that the given column and row are on the board
+        
             if (col >= 0 && col < numCols && row < numRows) {
 
                 let piece = cBoard[col][row];
@@ -145,10 +141,6 @@ export class Conditions implements OnInit{
         let numCols = cBoard.length;
         let numRows = cBoard[0].length;
 
-        // Here, we take successive diagonals, defined by the location of their "base",
-        // meaning the column where they meet the ground.
-        // The initial baseCol is a negative number, representing that the diagonal starts off
-        // the board. These diagonals intersect the board, nonetheless.
         for (
             let baseCol = matchReq - numRows;
             baseCol < numCols - (matchReq - 1);
@@ -157,14 +149,13 @@ export class Conditions implements OnInit{
 
             found = 0;
             foundPiece = 0;
-            col = baseCol - 1; // Subtracting 1 to compensate for incrementing col at
-                                // the beginning of the loop
+            col = baseCol - 1; 
 
-            // Here we work our way *DOWN* the current diagonal
+    
             for (let row = numRows - 1; row >= 0; row--) {
                 col++;
 
-                // Ensure that the given column and row are on the board
+      
                 if (col >= 0 && col < numCols && row < numRows) {
 
                 let piece = cBoard[col][row];

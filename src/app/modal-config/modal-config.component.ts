@@ -16,6 +16,10 @@ export class ModalConfigComponent implements OnInit {
   closeResult = '';
   player1!: string;
   player2!: string;
+  colors: boolean = false;
+  clicks: number = 0;
+  isComputer: boolean = false;
+  playerOrPc: string = 'Player 2: ';
   @ViewChild('content') template!: ElementRef;
 
 
@@ -47,10 +51,33 @@ export class ModalConfigComponent implements OnInit {
       this.closeResult = `Closed with: ${result}`;
     });
   }
-  setColor(color: any){
-    console.log(color)
+  setColor(color: any, color2: any){
+    console.log(color);
     this.config.setPlayer1Color(color);
-    console.log(this.config.getPlayer1Color());
+    this.config.setPlayer2Color(color2);
     this.homepage.ngOnInit();
   }
+
+  setPlayerModeAndSwitch(){
+    this.colors = true;
+    this.clicks++;
+  }
+
+
+  setMultiplayer(){
+    this.config.setIsRobot(false);
+    this.homepage.ngOnInit();
+    this.playerOrPc = 'Player 2: ';
+  }
+
+  setComputer(){
+    this.config.setIsRobot(true);
+    this.homepage.ngOnInit();
+    this.playerOrPc = 'Computer: ';
+  }
+
+  
+
+
+
 }

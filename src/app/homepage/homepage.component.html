@@ -3,20 +3,10 @@
 <div id="app" class="containerr">
    
     <h1>Connect Four</h1>
-
-    <div class="connect4-status">
-
-        <button class="connect4-restart">Restart</button>
-
-        <div class="connect4-label connect4-label--failure">
-            Game over!
-        </div>
-
-    </div>
     <!-- Show when hovering -->
     <div [hidden]="hideEffect">
         <button  *ngFor="let item of board.board; let j = index" class="connect4-row"
-        [ngStyle]="{'background-color': !mouseEnter ? 'white' : (j == getColumn ? (board.nextPlayer == -1 ? color1 : color2) : 'white')}"
+        [ngStyle]="{'background-color': !mouseEnter || !board.active || board.isRobotTurn ? 'white' : (j == getColumn ? (board.nextPlayer == -1 ? color1 : color2) : 'white')}"
         ></button>
     </div>
     <!---->
@@ -28,5 +18,6 @@
                         (click)="clickCell(i)"></button>
         </div>
     </div>
+
 </div>
 

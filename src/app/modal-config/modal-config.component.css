@@ -4,13 +4,48 @@
     cursor: pointer;
     display: inline-block;
     font-size: 12px;
-    height: 80px;
+    height: 40px;
     margin: 7.5px 7.5px;
     outline: none;
     padding: 10px;
+    /* padding-right: 70px;
+    padding-left: 70px; */
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
-    width: 80px;
+    width: 40px;
     border: 3px solid black;
 }
+
+.icons{
+    background: transparent;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: grey;
+    border-color: black;
+    border-width: 1px;
+    
+}
+
+.icons:focus {     
+    background-color:rgb(200, 200, 118);    
+}
+
+.icons:hover {
+    background-color:rgb(200, 200, 118);    
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+    font-style: italic;
+    -webkit-text-stroke: 1px #697aa527;
+  }
+
+  @media only screen and (max-width: 450px) {
+    .icons{
+        margin-right:50px;
+        margin-left:50px;   
+    }
+  }

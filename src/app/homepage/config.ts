@@ -10,7 +10,7 @@ export class Config {
     private player2Color: string = 'blue';
     private boardColumns!: number;
     private rowColumns!: number;
-    
+    private isRobot!: boolean;
 
     constructor(){
 
@@ -30,5 +30,12 @@ export class Config {
 
     getPlayer2Color(): string{
         return this.player2Color;
+    }
+
+    setIsRobot(data: boolean): void{
+        this.isRobot = data;
+    }
+    getIsRobot(): boolean{
+        return this.isRobot;
     }
 }
