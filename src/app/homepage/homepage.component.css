@@ -10,7 +10,7 @@ body {
   color: #333;
 }
 
-.container {
+.containerr {
   width: 700px;
   margin: 10px auto;
 }
@@ -42,18 +42,42 @@ body {
   background: #eeeeee;
   border-radius: 50%;
   border: none;
-  color: #333;
   cursor: pointer;
   display: inline-block;
   font-size: 12px;
   height: 80px;
-  margin: 10px auto;
+  margin: 10px 10px;
   outline: none;
   padding: 0;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
   width: 80px;
+  border: 3px solid black;
+}
+
+.connect4-row {
+  background: #eeeeee;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  height: 80px;
+  margin: 10px 10px;
+  outline: none;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 80px;
+}
+
+
+.connect4-board {
+  background: #4370F1 !important;
+  border: 3px solid black;
+  border-radius: 10px;
 }
 
 .connect4-board--active .connect4-cell:hover {
@@ -95,3 +119,34 @@ body {
 .connect4-label.connect4-label--failure {
   color: #801515;
 }
+
+/* -- Responsive  -- */
+
+@media only screen and (max-width: 600px) {
+  .containerr{
+    width: 100%;
+    margin:10 auto;
+    padding: 10 !important;
+  }
+
+  .connect4-cell{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .containerr{
+    width: 100%;
+    margin:10 auto;
+    padding: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .connect4-cell{
+    width: 25px;
+    height: 25px;
+  }
+}
+ 

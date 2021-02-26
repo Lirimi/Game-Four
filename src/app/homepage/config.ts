@@ -1,16 +1,34 @@
-import { getAttrsForDirectiveMatching } from "@angular/compiler/src/render3/view/util";
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 
-// Default Options
+@Injectable()
+export class Config {
 
-const axes = {
-    columns: 7,
-    rows: 6
+
+    private player1Color: string = 'red';
+    private player2Color: string = 'blue';
+    private boardColumns!: number;
+    private rowColumns!: number;
+    
+
+    constructor(){
+
+    }
+
+    setPlayer1Color(data: string): void{
+        this.player1Color = data;
+    }
+
+    getPlayer1Color(): string{
+        return this.player1Color;
+    }
+
+    setPlayer2Color(data: string): void{
+        this.player2Color = data;
+    }
+
+    getPlayer2Color(): string{
+        return this.player2Color;
+    }
 }
-
-const colors = {
-    red: 'red',
-    blue: 'blue'
-}
-
-export default {axes, colors};

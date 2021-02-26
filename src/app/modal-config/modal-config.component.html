@@ -1,0 +1,29 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="player1">Player 1: </label> 
+          <input type="button" id="player1" [style.background]="player1"
+      [cpPosition]="'bottom'"
+      [cpPositionOffset]="'50%'"
+      [cpPositionRelativeToArrow]="true"
+      [(colorPicker)]="player1" />
+      <label for="player2">Player 2: </label> 
+          <input type="button" id="player2" [style.background]="player2"
+      [cpPosition]="'bottom'"
+      [cpPositionOffset]="'50%'"
+      [cpPositionRelativeToArrow]="true"
+      [(colorPicker)]="player2"/>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click'); setColor(player1)">Save</button>
+    </div>
+  </ng-template>

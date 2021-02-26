@@ -1,4 +1,7 @@
-<div id="app" class="container">
+<app-modal-config></app-modal-config>
+
+<div id="app" class="containerr">
+   
     <h1>Connect Four</h1>
 
     <div class="connect4-status">
@@ -9,20 +12,20 @@
             Game over!
         </div>
 
-        <div style="float: right !important;">
-            <label for="player1">Player 1:</label>
-            <input id="player1" [(colorPicker)]="color1" [style.background]="color1"/>
-            
-        </div>
-
     </div>
-
+    <!-- Show when hovering -->
+    <div [hidden]="hideEffect">
+        <button  *ngFor="let item of board.board; let j = index" class="connect4-row"
+        [ngStyle]="{'background-color': !mouseEnter ? 'white' : (j == getColumn ? (board.nextPlayer == -1 ? color1 : color2) : 'white')}"
+        ></button>
+    </div>
+    <!---->
     <div class="connect4-board connect4-board--active">
         <div *ngFor="let item of board.board; let i = index" class="connect4-column">
-            <button [disabled]="board.active == false" *ngFor="let row of item" class="connect4-cell"
-						[ngStyle]="{'background-color': row == 0 ? 'default' : (row == -1 ? color1 : 'blue')}"
-                         
-                        (click)="clickCell(i)">{{row}}</button>
+            <button  style="border: 3px solid black;" [disabled]="board.active == false" *ngFor="let row of item" class="connect4-cell"
+                        (mouseenter) ="onHover(i)" (mouseleave)="offHover(i)"
+						[ngStyle]="{'background-color': row == 0 ? 'white' : (row == -1 ? color1 : color2)}"                        
+                        (click)="clickCell(i)"></button>
         </div>
     </div>
 </div>

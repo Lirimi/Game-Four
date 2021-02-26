@@ -1,0 +1,16 @@
+#player1, #player2 {
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    height: 80px;
+    margin: 7.5px 7.5px;
+    outline: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 80px;
+    border: 3px solid black;
+}

@@ -38,7 +38,7 @@ export class Board implements OnInit{
 
         col[colIndex] = player;
 
-        this.inserts += 1;
+        this.inserts++;
 
         this.nextPlayer = this.players[this.inserts % 2];
 
